@@ -1,0 +1,15 @@
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\bin\Debug\net6.0\Discrete math labs.exe
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\bin\Debug\net6.0\Discrete math labs.deps.json
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\bin\Debug\net6.0\Discrete math labs.runtimeconfig.json
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\bin\Debug\net6.0\Discrete math labs.dll
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\bin\Debug\net6.0\Discrete math labs.pdb
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.csproj.AssemblyReference.cache
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.AssemblyInfoInputs.cache
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.AssemblyInfo.cs
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.csproj.CoreCompileInputs.cache
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.dll
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\refint\Discrete math labs.dll
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.pdb
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\Discrete math labs.genruntimeconfig.cache
+C:\Users\docen\source\repos\Discrete math labs\Discrete math labs\obj\Debug\net6.0\ref\Discrete math labs.dll
