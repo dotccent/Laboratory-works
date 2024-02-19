@@ -10,7 +10,11 @@ namespace Discrete_math_labs
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             var multiplicity_U = new HashSet<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };     // универсальное множество U
+=======
+            var multiplicity_U = new HashSet<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };    // универсальное множество U
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
 
             var multiplicity_A = new HashSet<string> { "1", "5", "6", "8" };    // множество А
             var multiplicity_B = new HashSet<string> { "3", "6", "9", "10" };   // множество B
@@ -23,25 +27,37 @@ namespace Discrete_math_labs
 
             foreach (var element in union_multiplicity)
             {
-                Console.Write($"{element} ");   // выводим
+                Console.Write($"{element} ");
             }
 
             Console.WriteLine('\n');
 
+<<<<<<< HEAD
             var buffer_A = new HashSet<string>(multiplicity_A);    // буфер множества А для поиска пересечений с множеством В
 
             var same = buffer_A.Intersect(multiplicity_B);  // поиск пересечений множества А с множеством В
+=======
+            var buffer_A = new HashSet<string> (multiplicity_A);    // буфер множества А для поиска пересечений с множеством В
 
-            Console.Write("Пересечение множеств А и В: ");
+            var same = buffer_A.Intersect(multiplicity_B);    // поиск пересечений множества А с множеством В
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
+
+            Console.Write("Пересечение множеств А и В: ")
 
             foreach (var element in same)
             {
                 Console.Write($"{element} ");
             }
 
+<<<<<<< HEAD
             var difference_A_buffer = new HashSet<string>(multiplicity_A);  // буфер множества А для вычисления разницы между множествами
 
             var difference_B_buffer = new HashSet<string>(multiplicity_B);  // буфер множества В для вычисления разницы между множествами
+=======
+            var difference_A_buffer = new HashSet<string>(multiplicity_A);    // буфер множества А для вычисления разницы между множествами
+
+            var difference_B_buffer = new HashSet<string>(multiplicity_B);    // буфер множества В для вычисления разницы между множествами
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
 
             var difference_A_B = difference_A_buffer.Except(multiplicity_B);    // разность множества А и В
 
@@ -65,7 +81,11 @@ namespace Discrete_math_labs
                 Console.Write($"{element} ");
             }
 
+<<<<<<< HEAD
             var symmetrical_difference = new HashSet<string>(difference_A_B.Union(difference_B_A)); // симметрическая разница множеств А и В
+=======
+            var symmetrical_difference = new HashSet<string>(difference_A_B.Union(difference_B_A));    // симметрическая разница множеств А и В
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
 
             Console.WriteLine('\n');
 
@@ -77,12 +97,20 @@ namespace Discrete_math_labs
             }
 
             // дополненное множество А
+<<<<<<< HEAD
             var supplement_buffer_first = new HashSet<string>(multiplicity_U);  // первый буфер универсального множества U
+=======
+            var supplement_multiplicity_A = new HashSet<string>();  // пустое множество для дополнения множества А
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
 
             var supplement_multiplicity_A = supplement_buffer_first.Except(multiplicity_A); // дополняем множество А
 
             // дополненное множество В
+<<<<<<< HEAD
             var supplement_buffer_second = new HashSet<string>(multiplicity_U); // второй буфер универсального множества U
+=======
+            var supplement_multiplicity_B = new HashSet<string>();    // пустое множество для дополнения множества В
+>>>>>>> 434924dd1715baa543c6cccbb573ebb864ed5ddb
 
             var supplement_multiplicity_B = supplement_buffer_second.Except(multiplicity_B);    // дополняем множество В
 
