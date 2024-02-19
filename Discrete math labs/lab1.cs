@@ -81,13 +81,13 @@ namespace Discrete_math_labs
 
             var supplement_buffer_first = new HashSet<string>(multiplicity_U);  // первый буфер универсального множества U
 
-            var supplement_multiplicity_A = new HashSet<string>();  // пустое множество для дополнения множества А
+            var supplement_multiplicity_A = supplement_buffer_first.Except(multiplicity_A);  // пустое множество для дополнения множества А
 
             // дополненное множество В
 
             var supplement_buffer_second = new HashSet<string>(multiplicity_U); // второй буфер универсального множества U
 
-            var supplement_multiplicity_B = new HashSet<string>();    // пустое множество для дополнения множества В
+            var supplement_multiplicity_B = supplement_buffer_second.Except(multiplicity_B);    // пустое множество для дополнения множества В
 
             Console.WriteLine('\n');
 
