@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿//using System;
 //using System.Collections.Generic;
 //using System.Linq;
@@ -13,6 +14,25 @@
 //            var multiplicity_U = new HashSet<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };     // универсальное множество U
 
 //            var multiplicity_A = new HashSet<string> { "1", "5", "6", "8" };    // множество А
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Discrete_math_labs 
+{
+    class lab1
+    {
+        static void Main(string[] args)
+        {
+            var multiplicity_U = new HashSet<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };     // универсальное множество U
+
+            var multiplicity_A = new HashSet<string> { "1", "5", "6", "8" };    // множество А
+
+            var multiplicity_B = new HashSet<string> { "3", "6", "9", "10" };   // множество B
+>>>>>>> deb2cef17b83cecc3cf2612718997220ed6cc1da
 
 //            var multiplicity_B = new HashSet<string> { "3", "6", "9", "10" };   // множество B
 
@@ -27,6 +47,7 @@
 //                Console.Write($"{element} ");
 //            }
 
+<<<<<<< HEAD
 //            Console.WriteLine('\n');
 
 //            var buffer_A = new HashSet<string>(multiplicity_A);    // буфер множества А для поиска пересечений с множеством В
@@ -34,17 +55,30 @@
 //            var same = buffer_A.Intersect(multiplicity_B);  // поиск пересечений множества А с множеством В
 
 //            Console.Write("Пересечение множеств А и В: ");
+=======
+            var buffer_A = new HashSet<string>(multiplicity_A);    // буфер множества А для поиска пересечений с множеством В
+
+            var same = buffer_A.Intersect(multiplicity_B);  // поиск пересечений множества А с множеством В
+
+            Console.Write("Пересечение множеств А и В: ");
+>>>>>>> deb2cef17b83cecc3cf2612718997220ed6cc1da
 
 //            foreach (var element in same)
 //            {
 //                Console.Write($"{element} ");
 //            }
 
+<<<<<<< HEAD
 //            var difference_A_buffer = new HashSet<string>(multiplicity_A);  // буфер множества А для вычисления разницы между множествами
 
 //            var difference_B_buffer = new HashSet<string>(multiplicity_B);  // буфер множества В для вычисления разницы между множествами
 
 //            var difference_A_B = difference_A_buffer.Except(multiplicity_B);    // разность множества А и В
+=======
+            var difference_A_buffer = new HashSet<string>(multiplicity_A);  // буфер множества А для вычисления разницы между множествами
+
+            var difference_B_buffer = new HashSet<string>(multiplicity_B);  // буфер множества В для вычисления разницы между множествами
+>>>>>>> deb2cef17b83cecc3cf2612718997220ed6cc1da
 
 //            var difference_B_A = difference_B_buffer.Except(multiplicity_A);    // разность множества В и А
 
@@ -68,7 +102,11 @@
 
 //            var symmetrical_difference = new HashSet<string>(difference_A_B.Union(difference_B_A)); // симметрическая разница множеств А и В
 
+<<<<<<< HEAD
 //            Console.WriteLine('\n');
+=======
+            var symmetrical_difference = new HashSet<string>(difference_A_B.Union(difference_B_A)); // симметрическая разница множеств А и В
+>>>>>>> deb2cef17b83cecc3cf2612718997220ed6cc1da
 
 //            Console.Write("Симметрическая разность A и B: ");
 
@@ -79,6 +117,7 @@
 
 //            // дополненное множество А
 
+<<<<<<< HEAD
 //            var supplement_buffer_first = new HashSet<string>(multiplicity_U);  // первый буфер универсального множества U
 
 //            var supplement_multiplicity_A = supplement_buffer_first.Except(multiplicity_A);  // пустое множество для дополнения множества А
@@ -86,6 +125,19 @@
 //            // дополненное множество В
 
 //            var supplement_buffer_second = new HashSet<string>(multiplicity_U); // второй буфер универсального множества U
+=======
+            // дополненное множество А
+
+            var supplement_buffer_first = new HashSet<string>(multiplicity_U);  // первый буфер универсального множества U
+
+            var supplement_multiplicity_A = supplement_buffer_first.Except(multiplicity_A);  // пустое множество для дополнения множества А
+
+            // дополненное множество В
+
+            var supplement_buffer_second = new HashSet<string>(multiplicity_U); // второй буфер универсального множества U
+
+            var supplement_multiplicity_B = supplement_buffer_second.Except(multiplicity_B);    // пустое множество для дополнения множества В
+>>>>>>> deb2cef17b83cecc3cf2612718997220ed6cc1da
 
 //            var supplement_multiplicity_B = supplement_buffer_second.Except(multiplicity_B);    // пустое множество для дополнения множества В
 
