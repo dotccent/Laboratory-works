@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
@@ -12,10 +12,10 @@ namespace Discrete_math_labs
         public static void Main(string[] args)
         {
             int[,] BynaryMatrix = new int[5, 5] { { 1, 1, 0, 0, 1 },   // бинарная матрица P
-                                                   { 1, 1, 0, 0, 0 }, 
-                                                   { 0, 0, 1, 0, 0 }, 
-                                                   { 0, 0, 0, 1, 0 }, 
-                                                   { 1, 0, 0, 0, 0 } };
+                                                  { 1, 1, 0, 0, 0 },
+                                                  { 0, 0, 1, 0, 0 },
+                                                  { 0, 0, 0, 1, 0 },
+                                                  { 1, 0, 0, 0, 0 } };
 
             ReflexivityCheck(BynaryMatrix);    // проверка рефлексивности матрицы вызовом метода
 
@@ -23,9 +23,23 @@ namespace Discrete_math_labs
 
             SymmetryCheck(bynaryMatrix: BynaryMatrix, transposedMatrix: TransposedMatrix);  // проверка симметричности вызовом метода
 
-            AntisymmetricCheck(BynaryMatrix);   // проверки антисимметричности вызовом метода
+            if (AntisymmetricCheck(BynaryMatrix))   // проверки антисимметричности вызовом метода
+            {
+                Console.WriteLine("\nБинарная матрица антисимметрична");
+            }
+            else
+            {
+                Console.WriteLine("\nБинарная матрица не антисимметрична");
+            }
 
-            TransitivityCheck(BynaryMatrix);
+            if (TransitivityCheck(BynaryMatrix))    // проверка транзитивности вызовом метода
+            {
+                Console.WriteLine("\nБинарная матрица транзитивна");
+            }
+            else
+            {
+                Console.WriteLine("\nБинарная матрица антитранзитивна");
+            }
         }
 
         public static void ReflexivityCheck(int[,] bynaryMatrix)   // метод проверки рефлексивности бинарной матрицы
@@ -78,95 +92,69 @@ namespace Discrete_math_labs
             int rows = bynaryMatrix.GetLength(0);     // количество строк
             int cols = bynaryMatrix.GetLength(1);     // количество столбцов
 
-            bool flag = false;
+            bool flag = false;  // булевая переменная-флаг для прерывания циклов, при соответсвии условий симметричности матрицы
 
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (bynaryMatrix[i,j] == transposedMatrix[i,j])
+                    if (bynaryMatrix[i, j] == transposedMatrix[i, j])   // если элемент бинарной матрицы равен элементу транспонированной матрицы
                     {
-                        flag = true;
-                        Console.WriteLine("Бинарная матрица симметрична");
-                        break;
+                        flag = true;    // устанавливаем истинность
+                        Console.WriteLine("\nБинарная матрица симметрична");
+                        break;  // прерываем вложенный цикл
                     }
                 }
-                if (flag)
+                if (flag)   // поскольку флаг истинный, то прерываем основной цикл
                 {
                     break;
                 }
             }
         }
 
-        public static void AntisymmetricCheck(int[,] bynaryMatrix)
+        public static bool AntisymmetricCheck(int[,] bynaryMatrix)
         {
             int rows = bynaryMatrix.GetLength(0);     // количество строк
             int cols = bynaryMatrix.GetLength(1);     // количество столбцов
 
-            bool flag = false;
-
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (bynaryMatrix[i, j] == 1 && bynaryMatrix[j, i] == 1 && i != j)
+                    if (bynaryMatrix[i, j] == 1 && bynaryMatrix[j, i] == 1 && i != j)   // если элементы в главной диагонали равны 1
                     {
-                        flag = true; 
-                        Console.WriteLine("Бинарная матрица антисимметрична");
-                        break;
+                        return false;
                     }
-                    else
-                    {
-                        flag = true;
-                        Console.WriteLine("Бинарная матрица не антисимметрична");
-                        break;
-                    }
-                }
-                if (flag)
-                {
-                    break;
                 }
             }
+
+            return true;
         }
 
-        public static void TransitivityCheck(int[,] bynaryMatrix)
+        public static bool TransitivityCheck(int[,] binaryMatrix)
         {
-            int n = bynaryMatrix.GetLength(0);     // количество строк
+            int n = binaryMatrix.GetLength(0);     // Получаем количество строк в матрице
 
-            bool flag = false;
-
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)            
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < n; j++)        
                 {
-                    if (bynaryMatrix[i, j] == 1)
+                    if (binaryMatrix[i, j] == 1)  // Если элемент матрицы равен 1
                     {
-                        for (int k = 0; k < n; k++)
+                        for (int k = 0; k < n; k++)  // Для каждого элемента в строке j
                         {
-                            if (bynaryMatrix[j, k] == 1 && bynaryMatrix[i, k] != 1)
+                            // Проверяем, если в строке j есть элемент k такой, что для элементов (i, j) и (j, k) условие транзитивности не выполняется
+                            if (binaryMatrix[j, k] == 1 && binaryMatrix[i, k] != 0)
                             {
-                                flag = true;
-                                Console.WriteLine("Матрица не транзитивна");
-                                break;
-                            }
-                            else
-                            {
-                                flag = true;
-                                Console.WriteLine("Матрица транзитивна");
-                                break;
+                                return false;  // Возвращаем отрицание, так как нарушено условие транзитивности
                             }
                         }
                     }
-                    if (flag)
-                    {
-                        break;
-                    }
-                }
-                if (flag)
-                {
-                    break;
                 }
             }
+
+            return true;  // Если ни для одной тройки (i, j, k) не нарушено условие транзитивности, возвращаем истинность
         }
+
     }
 }
