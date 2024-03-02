@@ -11,11 +11,24 @@ namespace Discrete_math_labs
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Составлена следующая бинарная матрица:\n");
+
             int[,] BynaryMatrix = new int[5, 5] { { 1, 1, 0, 0, 1 },   // бинарная матрица P
                                                   { 1, 1, 0, 0, 0 },
                                                   { 0, 0, 1, 0, 0 },
                                                   { 0, 0, 0, 1, 0 },
                                                   { 1, 0, 0, 0, 0 } };
+
+            for (int i = 0; i < BynaryMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < BynaryMatrix.GetLength(1); j++)
+                {
+                    Console.Write($"{BynaryMatrix[i,j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
 
             ReflexivityCheck(BynaryMatrix);    // проверка рефлексивности матрицы вызовом метода
 
@@ -25,20 +38,20 @@ namespace Discrete_math_labs
 
             if (AntisymmetricCheck(BynaryMatrix))   // проверки антисимметричности вызовом метода
             {
-                Console.WriteLine("\nБинарная матрица антисимметрична");
+                Console.WriteLine("\nБинарная матрица является антисимметричной");
             }
             else
             {
-                Console.WriteLine("\nБинарная матрица не антисимметрична");
+                Console.WriteLine("\nБинарная матрица является не антисимметричной");
             }
 
             if (TransitivityCheck(BynaryMatrix))    // проверка транзитивности вызовом метода
             {
-                Console.WriteLine("\nБинарная матрица транзитивна");
+                Console.WriteLine("\nБинарная матрица является транзитивной");
             }
             else
             {
-                Console.WriteLine("\nБинарная матрица антитранзитивна");
+                Console.WriteLine("\nБинарная матрица является антитранзитивной");
             }
         }
 
@@ -101,7 +114,7 @@ namespace Discrete_math_labs
                     if (bynaryMatrix[i, j] == transposedMatrix[i, j])   // если элемент бинарной матрицы равен элементу транспонированной матрицы
                     {
                         flag = true;    // устанавливаем истинность
-                        Console.WriteLine("\nБинарная матрица симметрична");
+                        Console.WriteLine("\nБинарная матрица является симметричной");
                         break;  // прерываем вложенный цикл
                     }
                 }
